@@ -13,9 +13,9 @@ vector_t::vector_t()
 
 vector_t::vector_t(vector_t const & other)
 {
-	this->size_ = other.size_;
-	this->capacity_ = other.capacity_;
-	this->elements_ = new int[capacity_];
+	size_ = other.size_;
+	capacity_ = other.capacity_;
+	elements_ = new int[capacity_];
 	for (unsigned int i = 0; i < size_; i++)
 		elements_[i] = other.elements_[i];
 }  
@@ -27,7 +27,7 @@ vector_t& vector_t::operator =(vector_t const& other)
 		delete[] elements_;
 		this->size_ = other.size_;
 		this->capacity_ = other.capacity_;
-		this->this->elements_ = new int[capacity_];
+		this->elements_ = new int[capacity_];
 		for (unsigned int i = 0; i < size_; i++)
 			elements_[i] = other.elements_[i];
 	}
@@ -41,8 +41,10 @@ bool vector_t::operator ==(vector_t const & other) const
 		for (std::size_t i = 0; i < size_; i++)
 		{
 			if (this->elements_[i] != other.elements_[i])
+			{
 				return false;
 				break;
+			}	
 		}
 		return true;
 	}
@@ -104,13 +106,15 @@ void vector_t::pop_back()
 	{
     	  int* mas;
     	  mas = new int[size_];
-    	  for (std::size_t i = 0; i < size_; i++) {
+    	  for (std::size_t i = 0; i < size_; i++) 
+	  {
       		mas[i] = elements_[i];
-    	}
+    	  }
     	delete[] elements_;
     	capacity_ = capacity_ / 2;
     	elements_ = new int[capacity_];
-    	for (std::size_t i = 0; i < size_; i++) {
+    	for (std::size_t i = 0; i < size_; i++) 
+	{
       		elements_[i] = mas[i];
     	}
     	delete[] mas;
