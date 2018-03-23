@@ -5,7 +5,7 @@
 
 vector_t::vector_t()
 {
-}
+} //ff
 
 vector_t::vector_t(vector_t const & other)
 {
