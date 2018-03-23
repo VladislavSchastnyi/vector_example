@@ -15,8 +15,8 @@ public:
 	std::size_t size() const;
 	std::size_t capacity() const;
 
-	void push_back(int value);
-	void pop_back();
+	void push_back(int value);  // перераспределение памяти(увеличение "ячеек" на 2 если size=capacity)
+	void pop_back();  //  удаление элементов(уменьшение "ячеек" в 4 раза если 4*size=capacity)
 
 	int & operator [](std::size_t index);
 	int operator [](std::size_t index) const;
