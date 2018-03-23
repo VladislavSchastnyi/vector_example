@@ -13,14 +13,14 @@ vector_t::vector_t()
 
 vector_t::vector_t(vector_t const & other)
 {
-	this->this->size_ = other.size_;
+	this->size_ = other.size_;
 	this->capacity_ = other.capacity_;
 	this->elements_ = new int[capacity_];
-	for (size_t i = 0; i < size_; i++)
+	for (unsigned int i = 0; i < size_; i++)
 		elements_[i] = other.elements_[i];
 }  
 
-vector_t & vector_t::operator =(vector_t const & other)
+vector_t& vector_t::operator =(vector_t const& other)
 {
 	if (this != &other) 
 	{
@@ -28,7 +28,7 @@ vector_t & vector_t::operator =(vector_t const & other)
 		this->size_ = other.size_;
 		this->capacity_ = other.capacity_;
 		this->this->elements_ = new int[capacity_];
-		for (size_t i = 0; i < size_; i++)
+		for (unsigned int i = 0; i < size_; i++)
 			elements_[i] = other.elements_[i];
 	}
 	return *this;
@@ -60,11 +60,13 @@ vector_t::~vector_t()
 std::size_t vector_t::size() const
 {
     return size_;
+    return 0;
 }
 
 std::size_t vector_t::capacity() const
 {
     return capacity_;
+    return 0;
 }
 
 void vector_t::push_back(int value)
